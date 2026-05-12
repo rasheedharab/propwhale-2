@@ -1,3 +1,5 @@
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
@@ -12,45 +14,7 @@ export default function ProjectDetail() {
   return (
     <div className="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
       {/* TopNavBar */}
-      <nav className="bg-primary text-primary-fixed-dim docked full-width top-0 sticky shadow-sm z-50">
-        <div className="bg-primary/95 backdrop-blur-md">
-          <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
-            {/* Brand Logo */}
-            <Link className="text-headline-md font-headline-md font-bold text-secondary-fixed hover:opacity-80 transition-opacity" to="/">Propwhale</Link>
-            
-            {/* Navigation Links (Desktop) */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a className="text-primary-fixed-dim font-medium hover:text-secondary-fixed font-label-bold text-label-bold hover:opacity-80 transition-opacity" href="#">How it Works</a>
-              <Link className="text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-1 font-label-bold text-label-bold hover:opacity-80 transition-opacity" to="/">Projects</Link>
-            </div>
-            
-            {/* Actions */}
-            <div className="hidden md:flex items-center space-x-4">
-              <button className="text-primary-fixed-dim font-medium hover:text-secondary-fixed font-label-bold text-label-bold hover:opacity-80 transition-opacity">Login</button>
-              <button className="bg-secondary-fixed text-primary px-6 py-3 rounded hover:opacity-80 transition-opacity font-label-bold text-label-bold active:scale-95 duration-150">Invest Now</button>
-            </div>
-
-            {/* Mobile Menu Toggle */}
-            <div className="md:hidden flex items-center">
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-primary-fixed-dim hover:text-secondary-fixed transition-colors">
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-          </div>
-          {/* Mobile Navigation Menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden bg-primary w-full border-t border-white/10 px-margin-mobile py-4 space-y-4">
-              <a className="block text-primary-fixed-dim hover:text-secondary-fixed font-bold font-label-bold text-label-bold" href="#">How it Works</a>
-              <Link className="block text-secondary-fixed font-bold font-label-bold text-label-bold" to="/">Projects</Link>
-              <hr className="border-white/10" />
-              <a className="block text-primary-fixed-dim font-medium font-label-bold text-label-bold" href="#">Login</a>
-              <button className="w-full mt-2 bg-secondary-fixed text-primary px-6 py-3 rounded-md font-label-bold text-label-bold hover:opacity-80 transition-opacity shadow-sm">
-                Invest Now
-              </button>
-            </div>
-          )}
-        </div>
-      </nav>
+      <Header />
 
       {/* Main Canvas */}
       <main className="w-full pb-section-gap relative flex-grow">
@@ -300,28 +264,7 @@ export default function ProjectDetail() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-surface-container-highest dark:bg-inverse-surface text-on-surface dark:text-inverse-on-surface mt-auto border-t border-outline-variant">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 lg:py-section-gap max-w-container-max mx-auto">
-          <div className="md:col-span-1 flex flex-col gap-4">
-            <span className="text-headline-md font-headline-md font-bold text-primary">Propwhale</span>
-            <p className="font-body-md text-body-md text-on-surface-variant text-sm mt-2 max-w-[250px]">
-              Institutional-grade fractional real estate investments curated for visionary investors.
-            </p>
-          </div>
-          <div className="md:col-span-3 flex flex-wrap gap-x-12 gap-y-6 md:justify-end mt-8 md:mt-0">
-            <a className="font-label-bold text-label-bold text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">About</a>
-            <a className="font-label-bold text-label-bold text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Team</a>
-            <a className="font-label-bold text-label-bold text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Blog</a>
-            <a className="font-label-bold text-label-bold text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Legal</a>
-            <a className="font-label-bold text-label-bold text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Privacy Policy</a>
-          </div>
-          <div className="col-span-1 md:col-span-4 mt-8 pt-8 border-t border-outline-variant/30">
-            <p className="font-body-md text-body-md text-on-surface-variant text-xs text-center md:text-left">
-              © 2024 Propwhale. Fractional real estate investments are subject to market risks. All SPVs are managed under SEBI-compliant frameworks.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

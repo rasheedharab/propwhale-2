@@ -1,3 +1,5 @@
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -18,44 +20,7 @@ export default function Home() {
   return (
     <div className="bg-background text-on-background font-body-md overflow-x-hidden min-h-screen flex flex-col">
       {/* TopNavBar */}
-      <nav className="bg-primary text-primary-fixed docked full-width top-0 sticky bg-primary/95 backdrop-blur-md shadow-sm z-50">
-        <div className="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
-          {/* Brand */}
-          <div className="flex items-center">
-            <span className="text-headline-md font-headline-md font-bold text-secondary-fixed">Propwhale</span>
-          </div>
-          {/* Navigation Links (Web) */}
-          <div className="hidden md:flex space-x-8">
-            <a className="text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-1 hover:opacity-80 transition-opacity active:scale-95 duration-150 font-label-bold text-label-bold" href="#">How it Works</a>
-            <a className="text-primary-fixed-dim font-medium hover:text-secondary-fixed hover:opacity-80 transition-opacity font-label-bold text-label-bold" href="#">Projects</a>
-          </div>
-          {/* Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            <a className="text-primary-fixed-dim font-medium hover:text-secondary-fixed hover:opacity-80 transition-opacity font-label-bold text-label-bold" href="#">Login</a>
-            <button className="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full font-label-bold text-label-bold hover:opacity-80 transition-opacity active:scale-95 duration-150 shadow-sm">
-              Invest Now
-            </button>
-          </div>
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center">
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-primary-fixed-dim hover:text-secondary-fixed transition-colors">
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-        {/* Mobile Navigation Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-primary w-full border-t border-white/10 px-margin-mobile py-4 space-y-4">
-            <a className="block text-secondary-fixed font-bold font-label-bold text-label-bold" href="#">How it Works</a>
-            <a className="block text-primary-fixed-dim font-medium font-label-bold text-label-bold" href="#">Projects</a>
-            <hr className="border-white/10" />
-            <a className="block text-primary-fixed-dim font-medium font-label-bold text-label-bold" href="#">Login</a>
-            <button className="w-full mt-2 bg-secondary-fixed text-on-secondary-fixed px-6 py-3 rounded-md font-label-bold text-label-bold hover:opacity-80 transition-opacity shadow-sm">
-              Invest Now
-            </button>
-          </div>
-        )}
-      </nav>
+      <Header />
 
       <main className="flex-grow flex flex-col">
         {/* Hero Section */}
@@ -114,13 +79,13 @@ export default function Home() {
               <h2 className="font-headline-lg text-headline-lg text-primary mb-4">How Fractional Ownership Works</h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A transparent, seamless path to investing in high-yield, sustainable real estate.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative pt-8">
               {/* Connecting line for desktop */}
-              <div className="hidden md:block absolute top-12 left-1/6 right-1/6 h-1 bg-surface-variant -translate-y-1/2 z-0"></div>
-              <div className="hidden md:block absolute top-12 left-1/6 h-1 bg-sunset-gradient -translate-y-1/2 z-0 w-1/3"></div>
+              <div className="hidden md:block absolute top-[52px] left-[16%] right-[16%] h-1 bg-surface-variant -translate-y-1/2 z-0"></div>
+              <div className="hidden md:block absolute top-[52px] left-[16%] h-1 bg-sunset-gradient -translate-y-1/2 z-0 w-1/3"></div>
               
               <div className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-24 h-24 rounded-full bg-surface-container-lowest shadow-lg border-4 border-surface-variant flex items-center justify-center mb-6 overflow-hidden">
+                <div className="w-24 h-24 rounded-full bg-surface-container-lowest shadow-lg border-4 border-surface-variant flex items-center justify-center mb-8 overflow-hidden">
                   <div className="w-full h-full bg-primary flex items-center justify-center">
                     <Search size={32} className="text-white" />
                   </div>
@@ -129,7 +94,7 @@ export default function Home() {
                 <p className="font-body-md text-body-md text-on-surface-variant">Browse our curated portfolio of pre-vetted, sustainable commercial and residential properties.</p>
               </div>
               <div className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-24 h-24 rounded-full bg-surface-container-lowest shadow-lg border-4 border-secondary-fixed flex items-center justify-center mb-6 overflow-hidden">
+                <div className="w-24 h-24 rounded-full bg-surface-container-lowest shadow-lg border-4 border-secondary-fixed flex items-center justify-center mb-8 overflow-hidden">
                   <div className="w-full h-full bg-sunset-gradient flex items-center justify-center">
                     <Coins size={32} className="text-white" />
                   </div>
@@ -138,7 +103,7 @@ export default function Home() {
                 <p className="font-body-md text-body-md text-on-surface-variant">Purchase fractional shares securely through our SEBI-compliant Special Purpose Vehicles (SPVs).</p>
               </div>
               <div className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-24 h-24 rounded-full bg-surface-container-lowest shadow-lg border-4 border-surface-variant flex items-center justify-center mb-6 overflow-hidden">
+                <div className="w-24 h-24 rounded-full bg-surface-container-lowest shadow-lg border-4 border-surface-variant flex items-center justify-center mb-8 overflow-hidden">
                   <div className="w-full h-full bg-surface-container flex items-center justify-center">
                     <LineChart size={32} className="text-primary" />
                   </div>
@@ -160,10 +125,10 @@ export default function Home() {
               <h2 className="font-headline-lg text-headline-lg text-primary mb-4">Investment Pathways</h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant">Choose the investment strategy that aligns with your financial goals, from fractional entry to full asset control.</p>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-8 items-stretch">
               {/* Pathway 1: Fractional Equity Share */}
-              <div className="glass-card p-6 md:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white/40 w-full h-full relative z-20 hover:-translate-y-2 transition-transform duration-500 group">
-                <div className="flex flex-col xl:flex-row gap-8">
+              <div className="glass-card p-6 md:p-8 xl:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white/40 w-full h-full relative z-20 hover:-translate-y-2 transition-transform duration-500 group flex flex-col">
+                <div className="flex flex-col xl:flex-row gap-6 xl:gap-8 h-full">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-2xl bg-sunset-gradient flex items-center justify-center text-white shadow-lg shadow-sunset-gradient/20">
                       <PieChart size={32} />
@@ -190,9 +155,9 @@ export default function Home() {
               </div>
 
               {/* Pathway 2: Outright Property Purchase */}
-              <div className="glass-card p-6 md:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white/40 w-full h-full relative z-10 hover:-translate-y-2 transition-transform duration-500 group overflow-hidden">
+              <div className="glass-card p-6 md:p-8 xl:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white/40 w-full h-full relative z-10 hover:-translate-y-2 transition-transform duration-500 group overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-bl-full -mr-10 -mt-10"></div>
-                <div className="flex flex-col xl:flex-row gap-8 h-full">
+                <div className="flex flex-col xl:flex-row gap-6 xl:gap-8 h-full">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center text-on-primary shadow-lg">
                       <Building size={32} />
@@ -370,9 +335,9 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
+            <div className="flex flex-wrap justify-center gap-8 pb-8">
               {/* Project Card 1 */}
-              <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,15,34,0.04)] border border-surface-variant group cursor-pointer hover:-translate-y-1 transition-transform duration-300 flex flex-col">
+              <div className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,15,34,0.04)] border border-surface-variant group cursor-pointer hover:-translate-y-1 transition-transform duration-300 flex flex-col">
               <div className="h-48 relative overflow-hidden">
                 <img alt="Solar integrated villa" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiB7ch7wfEHTZ-hRq2tOWRXSiUHox9PA4bGc7NiOaI7KPC8BwQI_BOn-zEkBjc1nYwkPrfrXNY1w4sDMH8Hw8HonfCmngTGWufsrPCpWZzR-VDuW3OQMHZEqrRMpHUopyfEvR4oNDyT_NYB16LJHtEAiXFTJRWe86yRtWBlg5n1bKnpXydJCZYCsGBvAn7r4HMZvMgMgm4IepXwScBnCU_6FR2KPLFEznPh3znLvKxvXprdCDz2WH6-u2rttPOGzf1tlRuuBKgrNLF" />
                 <div className="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full font-label-bold text-label-bold text-[12px] flex items-center gap-1">
@@ -413,7 +378,7 @@ export default function Home() {
             </div>
 
             {/* Project Card 2 */}
-            <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,15,34,0.04)] border border-surface-variant group cursor-pointer hover:-translate-y-1 transition-transform duration-300 flex flex-col">
+            <div className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,15,34,0.04)] border border-surface-variant group cursor-pointer hover:-translate-y-1 transition-transform duration-300 flex flex-col">
               <div className="h-48 relative overflow-hidden">
                 <img alt="Commercial tech park" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEsPt3ffUBa1RUCIqEWQyTsi_uEWIAn4ih_OM7R6Z5-_kSvBjCTBtgnsyzRVKi9HRySp4iu_UKqDjFdQEJ3gHHW5uirERunQ-5Tc_eXSXMfuPhf6zgXXq86iIl9mvdNIP4Sr9Hq27rE-3AWVVYKfGUdHiw-1vPlPPEkzpf02ns9fLe3KOdvqrnvUO2YtnS8yYlvhs16jgezH6JXyv_YWYK5JEj3AH5h1xjEE08w6_a9ID2g3cij7oG01fSUyB_1twfPMXp5vnRW7C0" />
                 <div className="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full font-label-bold text-label-bold text-[12px] flex items-center gap-1">
@@ -454,7 +419,7 @@ export default function Home() {
             </div>
 
             {/* Project Card 3 */}
-            <Link to="/project/purva-whitehall" className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,15,34,0.04)] border border-surface-variant group cursor-pointer hover:-translate-y-1 transition-transform duration-300 flex flex-col">
+            <Link to="/project/purva-whitehall" className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,15,34,0.04)] border border-surface-variant group cursor-pointer hover:-translate-y-1 transition-transform duration-300 flex flex-col">
               <div className="h-48 relative overflow-hidden">
                 <img alt="Purva Whitehall Property Exterior" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuNI3iDobDbgMWtDpEGE56blD-wCHpcFOB4vD-419xWlmtvzzz9P1mMaEItWpXn6gS5Ztshsa6egl1Ad4sgj9ynK6pS5gkbmpVV3ZEJdI20EFmHxiYAg2rTyHhoAw0myqnkxDgP_UPM0PkML-WPPoO1I9aS_pvVbcJyR-vvkZ0hp1SDYp0MkWagBL_tT8hx1pvg2JDa6q5dn2TYA5C89HKayU1qlKChE6uoK51Q-UZyESW6kSmnCwqumntfRUe3lJF63e4l-a688zg" />
                 <div className="absolute top-4 left-4 bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-bold text-label-bold text-[12px] flex items-center gap-1">
@@ -553,13 +518,13 @@ export default function Home() {
                 <h2 className="font-headline-lg text-headline-lg text-primary mb-2">Market Insights</h2>
                 <p className="font-body-md text-body-md text-on-surface-variant">The latest on fractional ownership and sustainable real estate.</p>
               </div>
-              <a className="hidden md:inline-flex items-center text-primary font-label-bold hover:underline" href="#">
+              <Link className="hidden md:inline-flex items-center text-primary font-label-bold hover:underline" to="/blog">
                 View All Articles <ArrowRight size={18} className="ml-1" />
-              </a>
+              </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Article 1 */}
-              <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant group cursor-pointer hover:shadow-md transition-shadow">
+              <Link to="/blog/detail" className="block bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant group cursor-pointer hover:shadow-md transition-shadow">
                 <div className="h-48 overflow-hidden">
                   <img alt="Solar panels on commercial building" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRLBoDq3wRY5Erc_nmmGwbG5tJW1ldBy037qq_4KvYk7PlnuY0Z6CeKDPit68eUEr3gXmhWMVIlvNnDy3KI256cjN5lYna1OfG9UDjUHvMsqsokyJaLGaN-JZpczwzQ9B7I8apMeRGsWdljj-iJP2ZNvsw0oGpfrEE4f1iEkJAmjWDtg83YJyskxPimVekt1f-7N2R1gHGVmeXd1T8PHkj6yr7UjjRqPIdavCzi40bkxSay6jiNomsFedm01fDLxPvga_c91VJtNE9" />
                 </div>
@@ -572,10 +537,10 @@ export default function Home() {
                   <p className="font-body-md text-[14px] text-on-surface-variant mb-4 line-clamp-2">How new regulations and corporate ESG mandates are driving premium valuations for green buildings.</p>
                   <span className="text-primary font-label-bold text-[14px] flex items-center group-hover:underline">Read Article <ChevronRight size={16} className="ml-1" /></span>
                 </div>
-              </div>
+              </Link>
 
               {/* Article 2 */}
-              <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant group cursor-pointer hover:shadow-md transition-shadow">
+              <Link to="/blog/detail" className="block bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant group cursor-pointer hover:shadow-md transition-shadow">
                 <div className="h-48 overflow-hidden">
                   <img alt="Business graph" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_667oMVYDTKC1a1AZHMvEtjonknVv1o2XXs50MDrahWMjNq3VDkD5HrrqFq81s4avq5Ie7-dNN-wm3_KQ9lmygaoWj9LlIBs2ud4mSouqVq_jjPPvCgmGyawdqcltwxxndwjd2VgaA8elI2p9L2G-vl-3w3RRE_ZsKtQLLjrmmT-EdEQDy06xLrq_9EFjqW3vRaFF03a-YVHr1ztGasufK9kPU3x3i8Knbb4z9t11QfvSLVLuSb_zqOqgaI7CxMOhaBmK_HWMn19i" />
                 </div>
@@ -588,10 +553,10 @@ export default function Home() {
                   <p className="font-body-md text-[14px] text-on-surface-variant mb-4 line-clamp-2">A deep dive into why institutional investors are accepting lower cap rates for Grade-A sustainable assets.</p>
                   <span className="text-primary font-label-bold text-[14px] flex items-center group-hover:underline">Read Article <ChevronRight size={16} className="ml-1" /></span>
                 </div>
-              </div>
+              </Link>
 
               {/* Article 3 */}
-              <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant group cursor-pointer hover:shadow-md transition-shadow">
+              <Link to="/blog/detail" className="block bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant group cursor-pointer hover:shadow-md transition-shadow">
                 <div className="h-48 overflow-hidden bg-surface-container-highest flex items-center justify-center">
                   <Building2 size={64} className="text-outline-variant" />
                 </div>
@@ -604,97 +569,14 @@ export default function Home() {
                   <p className="font-body-md text-[14px] text-on-surface-variant mb-4 line-clamp-2">Why high-net-worth individuals are diversifying their portfolios with fractional shares of commercial real estate.</p>
                   <span className="text-primary font-label-bold text-[14px] flex items-center group-hover:underline">Read Article <ChevronRight size={16} className="ml-1" /></span>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="bg-surface-container-low border-t border-surface-variant pt-16 pb-8">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            {/* Column 1: Brand */}
-            <div>
-              <h3 className="font-headline-md text-headline-md font-bold text-primary mb-6">Propwhale</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-                Democratizing access to high-yield, sustainable real estate through solar-tech optimized fractional ownership.
-              </p>
-              <div className="flex gap-4">
-                <a aria-label="Share" className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface hover:bg-outline-variant transition-colors" href="#">
-                  <Share2 size={20} />
-                </a>
-                <a aria-label="Globe" className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface hover:bg-outline-variant transition-colors" href="#">
-                  <Globe size={20} />
-                </a>
-                <a aria-label="Podcast" className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface hover:bg-outline-variant transition-colors" href="#">
-                  <Podcast size={20} />
-                </a>
-              </div>
-            </div>
-            
-            {/* Column 2: Platform */}
-            <div>
-              <h4 className="font-headline-md text-[18px] font-bold text-primary mb-6">Platform</h4>
-              <ul className="space-y-4 font-body-md text-on-surface-variant">
-                <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">How it Works</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Properties</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Learn & Insights</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Contact Support</a></li>
-              </ul>
-            </div>
-
-            {/* Column 3: Legal */}
-            <div>
-              <h4 className="font-headline-md text-[18px] font-bold text-primary mb-6">Legal</h4>
-              <ul className="space-y-4 font-body-md text-on-surface-variant">
-                <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Risk Disclosure</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Investor Charter</a></li>
-              </ul>
-            </div>
-
-            {/* Column 4: Stay Updated */}
-            <div>
-              <h4 className="font-headline-md text-[18px] font-bold text-primary mb-6">Stay Updated</h4>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-4">
-                Join our community of solar-tech optimists for exclusive insights.
-              </p>
-              <form className="flex flex-col gap-3">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-md focus:outline-none focus:border-primary text-on-surface"
-                  required
-                />
-                <button type="submit" className="w-full bg-primary text-on-primary py-3 rounded-md font-label-bold hover:bg-primary/90 transition-colors">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-          
-          {/* Bottom text */}
-          <div className="pt-8 flex flex-col gap-4">
-            <p className="font-body-md text-[12px] text-on-surface-variant">
-              SEBI Compliant: All SPVs are managed under strict regulatory frameworks for MSMEs.
-            </p>
-            <p className="font-body-md text-[12px] text-on-surface-variant">
-              Disclaimer: Fractional real estate investment is subject to market risks. Past performance does not guarantee future results. Please read the offer documents carefully before investing. Asset values and rental yields may fluctuate based on market conditions.
-            </p>
-            
-            <div className="flex flex-col md:flex-row justify-between items-center mt-4 pt-8 border-t border-outline-variant/30 text-[12px] text-on-surface-variant">
-              <p>© 2024 Propwhale Technologies Pvt Ltd. All rights reserved.</p>
-              <div className="flex gap-6 mt-4 md:mt-0">
-                <a href="#" className="hover:text-primary transition-colors">Sitemap</a>
-                <a href="#" className="hover:text-primary transition-colors">Cookie Policy</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
